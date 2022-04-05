@@ -42,18 +42,32 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
       $(function(){
+      $("#sidebar").load("../sidebar.html");
+    });
+    </script>
+
+
+    <script>
+      $(function(){
         $("#ensembleTable").load("ensemble_table.html");
       });
     </script>
     
     <!-- Custom styles for this template -->
-    <link href="dashboard.css" rel="stylesheet">
+    <link href="/sidebars.css" rel="stylesheet">
   </head>
 
 
 
 <body>
-  <div id="ensembleTable"></div>
+  <main>
+    <div class="flex-shrink-0 p-3 bg-dark text-white" style="width: 280px;" id="sidebar" ></div>
+    <div class="container">
+      <div id="ensembleTable"></div>
+    </div>  
+  </main>
+
+
 
 
 

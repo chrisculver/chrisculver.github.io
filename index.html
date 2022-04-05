@@ -27,6 +27,12 @@
       }
     </style>
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+      $(function(){
+      $("#sidebar").load("sidebar.html");
+    });
+    </script>
     
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="sidebars.css">
@@ -34,29 +40,10 @@
 
   
   <body>
-    
-    <div class="flex-shrink-0 p-3 bg-dark text-white" style="width: 280px;">
-      <a href="/" class="d-flex align-items-center pb-3 mb-3 link-white text-decoration-none border-bottom">
-        <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-        <span class="fs-5 fw-semibold">Collapsible</span>
-      </a>
-      <ul class="list-unstyled ps-0">
-        <li class="mb-1">
-          <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-            Projects
-          </button>
-          <div class="collapse show" id="home-collapse">
-            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-              <li><a href="./su4/ensembles.html" class="link-white rounded">SU(4)</a></li>
-              <li><a href="#" class="link-white rounded">Other</a></li>
-            </ul>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-
-
+    <main>
+    <div class="flex-shrink-0 p-3 bg-dark text-white" style="width: 280px;" id="sidebar" ></div>
+        
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>      
+    </main>
   </body>
 </html>
