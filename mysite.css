@@ -87,3 +87,12 @@ main {
 
 .fw-semibold { font-weight: 600; }
 .lh-tight { line-height: 1.25; }
+
+
+
+.collapsed .icon-class:before {
+  content: '>';
+}
+.icon-class:before {
+content: 'v';
+}
