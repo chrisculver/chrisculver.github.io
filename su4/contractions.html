@@ -70,12 +70,20 @@
 <body>
   <main>
     <div class="flex-shrink-0 p-3 bg-dark text-white" style="width: 280px;" id="sidebar" ></div>
-    <p>Plotted below are some first timing tests for GPU tensor contractions with the cuTENSOR library.
-        The data represent the time to perform a single contraction on four unique tensors, with only one trial run and no "GPU warmup".
-        This is likely the explanation for the noise at small $N_{vec}N_{s}$.
-    </p>
-    <img class="img-fluid" src="images/contract_time.svg" alt="Missing pdf">
-  </main>
+    <div class="container">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <img class="img-fluid mx-auto d-block" style="width: auto; height: auto; padding-bottom: 20px;" src="images/contract_time.svg" alt="Missing image">
+                <p>Plotted below are some first timing tests for GPU tensor contractions with the cuTENSOR library.
+                The data represent the time to perform a single contraction on four unique tensors, with only one trial run and no "GPU warmup".
+                This is likely the explanation for the noise at small $N_{vec}N_{s}$.
+                </p>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+</main>
 
 
 
