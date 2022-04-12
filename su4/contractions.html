@@ -56,6 +56,13 @@
     <!-- Custom styles for this template -->
     <link href="/mysite.css" rel="stylesheet">
 
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+      </script>
+      <script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      </script>
+
   </head>
 
 
@@ -63,9 +70,11 @@
 <body>
   <main>
     <div class="flex-shrink-0 p-3 bg-dark text-white" style="width: 280px;" id="sidebar" ></div>
-    <div class="container">
-      <div id="ensembleTable"></div>
-    </div>  
+    <p>Plotted below are some first timing tests for GPU tensor contractions with the cuTENSOR library.
+        The data represent the time to perform a single contraction on four unique tensors, with only one trial run and no "GPU warmup".
+        This is likely the explanation for the noise at small $N_{vec}N_{s}$.
+    </p>
+    <img class="img-fluid" src="images/contract_time.svg" alt="Missing pdf">
   </main>
 
 
