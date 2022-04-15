@@ -10,24 +10,6 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="../assets/dist/css/bootstrap.min.css">
-  
-
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script>
@@ -44,10 +26,17 @@
 
   
   <body>
-    <main>
-    <div class="d-flex flex-column flex-shrink-0 p-3" style="width: 280px;" id="sidebar" ></div>
+      <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li><a href="#">About</a></li>
+            <li><a href="#research">Physics Research</a></li>
+            <li><a href="#interests">Interests</a></li>
+        </div>
+      </div>   
         
-    <div class="container" style="padding-top: 75px">
+    <div class="container-fluid p-0">
+    <section class="main-page d-flex p-3 p-lg-5 align-items-center" id="about">
+    <div class="w-100">
       <h1 class="mb-0"> Christopher Culver </h1>
         
       <div class="subheading mb-5">Liverpool, UK
@@ -78,8 +67,26 @@
         <p> <i class="fa-solid fa-person-digging"></i> Warning this website is under construction!  Apologies for the mess. <i class="fa-solid fa-person-digging"></i></p>
       </div>
     </div>
+    </section>
+
+    <hr class="m-0"> 
+
+    <section class="main-page d-flex p-3 p-lg-5 align-items-center" id="research">
+      <h2 class="mb-0"> Physics Research </h2>
+       
+    </section>
+
+    <hr class="m-0"> 
+
+    <section class="main-page d-flex p-3 p-lg-5 align-items-center" id="interests">
+      <h2 class="mb-0"> Interests </h2>
+    </section>
+    </div>
+
+
+
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>      
-    </main>
+  
   </body>
 </html>
