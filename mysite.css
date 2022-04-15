@@ -14,7 +14,7 @@ body {
   height: -webkit-fill-available;
   max-height: 100vh;
   overflow-x: auto;
-  overflow-y: hidden;
+  overflow-y: auto;
 }
 
 html {
@@ -115,8 +115,15 @@ a:hover {
 /* Hide for mobile, show later */
 .sidebar {
   display: none;
-  width: var(--sidebar-width);
+/*  width: var(--sidebar-width);*/
   font-size: 1.3rem;
+  visibility: hidden;
+  align-items: center;
+}
+
+
+.nav-sidebar {
+  visibility: hidden;
 }
 
 .center-block {
@@ -132,18 +139,22 @@ a:hover {
     bottom: 0;
     left: 0;
     z-index: 1000;
-    display: block;
+    display: flex;
     align-items: center;
     padding: 20px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
     background-color: var(--main-color);
     border-right: 1px solid #eee;
+    visibility: visible;
+    width: var(--sidebar-width);
   }
   body {
     padding-right: 40px;
-    padding-left: 220px;
-    overflow-y: auto;
+    padding-left: var(--sidebar-width);
+  }
+  .nav-sidebar {
+    visibility: visible;
   }
 }
 
@@ -156,10 +167,7 @@ a:hover {
   /*margin-left: -20px;*/
 }
 
-.sidebar{
-  display: flex;
-  align-items: center;
-}
+
 
 .nav-sidebar>li {
   display: flex;
