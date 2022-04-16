@@ -15,6 +15,7 @@ body {
   max-height: 100vh;
   overflow-x: auto;
   overflow-y: auto;
+  position: relative;
 }
 
 html {
@@ -168,7 +169,38 @@ a:hover {
 }
 
 
+.list-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
+.list-group-item {
+  color: white;
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-radius: 10px !important;
+  text-decoration: none;
+  background-color: var(--main-color);
+  border: none !important;
+}
+
+.list-group-item:hover {
+  color: white;
+  background-color: var(--hover-color);
+}
+
+.list-group-item.active {
+  color: white;
+  background-color: var(--hover-color);
+}
+
+
+
+/*!
 .nav-sidebar>li {
   display: flex;
   flex-direction: column;
@@ -189,3 +221,10 @@ a:hover {
 .nav-sidebar>li>a:hover {
   background-color: var(--hover-color);
 }
+.nav-sidebar>li>a:active {
+  background-color: var(--hover-color);
+}
+.nav>li>a:active {
+  background-color: var(--hover-color);
+}
+*/
