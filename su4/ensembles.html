@@ -15,8 +15,14 @@
        
        <script>
         $(function(){
-          $("#ensembleTable").load("/su4/ensemble_table.html");
+          $("#ensembleTableQuenched").load("/su4/ensemble_table_quenched.html");
         });
+      </script>
+
+      <script>
+      $(function(){
+        $("#ensembleTableWilson").load("/su4/ensemble_table_wilson.html");
+      });
       </script>
 
       <script>
@@ -43,7 +49,11 @@
       <p>
         Click on any of the rows to be taken to a page with time-series plots of the ensembles.  
       </p>
-      <div id="ensembleTable"></div>
+
+      <h4> Quenched Ensembles</h4>
+      <div id="ensembleTableQuenched"></div>
+      <h4> Wilson Ensembles</h4>
+      <div id="ensembleTableWilson"></div>
 
       <br>
       <h3> Generation timing </h3>
