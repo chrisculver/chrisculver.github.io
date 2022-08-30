@@ -31,9 +31,15 @@
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
 
-
     <!-- Custom styles for this template -->
     <link href="/su4/su4.css" rel="stylesheet">
+
+    <style> 
+      li { 
+        margin-top: 2ex;
+      }
+    </style>
+
 
   </head>
 
@@ -47,9 +53,9 @@
         The main three repositories to note are
 
         <ul>
-          <li> Ensemble generation, simple measurements - <a href="https://xgitlab.cels.anl.gov/LSD/su4_sdm_gpu">su4_sdm_gpu</a></li>
-          <li> LapH, eigenvectors, perambulators, correlators - <a href="https://gitlab.com/Kimmy.Cushman/laph_build_and_run">laph_build_and_run</a></li>
-          <li> Workflow for operators and wick contractions - <a href="https://github.com/chrisculver/su4workflow">su4workflow</a></li>
+          <li><a href="https://xgitlab.cels.anl.gov/LSD/su4_sdm_gpu">su4_sdm_gpu</a> for ensemble generation and simple measurements</li>
+          <li><a href="https://gitlab.com/Kimmy.Cushman/laph_build_and_run">laph_build_and_run</a> for computing LapH eigenvectors, perambulators and correlators</li>
+          <li><a href="https://github.com/chrisculver/su4workflow">su4workflow</a> for managing the conversion from operators to diagrams</li>
         </ul>
 
         <h4 style="padding-top: 10ex;"> LapH </h4> 
@@ -63,34 +69,69 @@
           $$
             \tau_{\alpha\beta}(t',t) = V_s^{\dagger}(t')M^{-1}_{\alpha\beta}(t',t)V_s(t)
           $$
-          <li> Stochastic estimation </li>
+          <li> TODO: Stochastic estimation </li>
         </ol>
 
 
         <h4 style="padding-top: 10ex;"> Operators </h4>
         <ol>
-          <li> Construct single baryon operator </li>
-            <ul>
-              <li> Definite isospin </li>
-              <li> Definite irrep </li> 
-            </ul> 
-            TODO: Baryon-baryon, easy
-            TODO: Displaced quarks? 
+          <li> Projection onto finite-volume irrep </li>
+             Define $M_B$ baryon elementals 
+              $$ 
+                B_i = q^{f_0}_{\alpha}q^{f_1}_{\beta}q^{f_2}_{\delta}q^{f_3}_{\gamma}
+              $$
+               Construct a representation of $O_h$ 
+              $$
+                U_R B_i U_R^{\dagger}=\sum_{j=1}^{M_B} B_jW_{ji}(R)
+              $$
+               Rows of projection matrix onto irrep $\Lambda$, row $\lambda$ gives operators
+              $$
+                P^{\Lambda\lambda}_{ij}=\frac{d_{\Lambda}}{\mid O_h \mid}\sum_R \Gamma_{\lambda\lambda}(R) W_{ji}(R)
+              $$
+            <li> Projection onto isospin </li>
+                Clebsch-Gordan for $SU(2)\times SU(2)\times SU(2)\times SU(2)$
+              
+            
+            <li> TODO: Multi-baryon projections </li>
+                We know how a baryon of momentum $p$ will rotate under $R$ by the above construction.  
+                Can once again construct representations and project onto the irrep for $B(p_1)B(p_2)$.
+            <li> Displaced quarks? </li>
         </ol>
         </p>
 
         <h4 style="padding-top: 10ex;"> Wick Contractions </h4>
-        <p>
-            <a href="https://github.com/chrisculver/WickContractions">Wick Contractions</a>.  
-            Finished.  Only minor tweaks are done at times.
-        </p>
+        To evaluate the wick contractions we write all correlators as a product of commuting objects $C_a$, 
+        quarks and anti-quarks.
+        $$
+            C(t)=\langle O(t)O^{\dagger}(0) \rangle \propto \prod_a C_a\prod_i \bar{q}_i \prod_j q_j
+        $$
+        The commuting objects are meson/baryon blocks which contain information about how the operators were projected
+        into definite irreps, for example the spin and color structure.  The product over quarks and anti-quarks is evaluated
+        with Wick's theorems which results over a sum over all permutations of $P(1,\ldots,n)$ giving 
+        $$
+            C(t)=\sum_i d_i=\sum_P \text{tr}\left[ \prod_a C_a M^{-1}_{i_0 j_{P_0}} \cdots M^{-1}_{i_n j_{P_n}}\right].
+        $$
+        
+        Evaluating each diagram can expressed as traversing a graph where all of the nodes are the meson/baryon blocks $C_a$ and the 
+        edges are given by the propagators $M^{-1}$.  This can then be optimized using <a href="https://github.com/laphnn/contraction_optimizer">contraction optimizer</a> by supplying
+        as input a list of diagrams in a compact notation.  As an example the single baryon two point correlation function diagrams are
+
+        <pre><code>
+        {'10': [[3, 0], [2, 3], [1, 2], [0, 1]]}
+        {'10': [[3, 2], [2, 3], [1, 0], [0, 1]]}
+        {'10': [[3, 0], [2, 1], [1, 2], [0, 3]]}
+        {'10': [[3, 2], [2, 1], [1, 0], [0, 3]]}
+        </code></pre>
+
+        Where the first pair of numbers specifies the two baryon blocks being contracted.  The list of pairs gives the edge connections between the indices on the tensor. 
+
 
         <h4 style="padding-top: 10ex;"> Tensor Contractions </h4> 
-        <p>
-            Part of Wick contractions does the LapH smearing.  
-
-            Also done in Kimmy's gitlab but on the meson/baryon branches.
-        </p>
+            <ul>
+              <li> Chris & Kimmy versions match for meson & baryon correlator </li>
+              <li> Tensor contractions done on GPU </li>
+              <li> TODO: Construct baryon blocks on GPU </li>
+            </ul>
 
         <h4 style="padding-top: 10ex;"> Analysis </h4>
         <p>
