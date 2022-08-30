@@ -72,6 +72,8 @@
           <li> TODO: Stochastic estimation </li>
         </ol>
 
+        Code is in <code>Step2_Distill_vecs</code> and <code>Step3_Perambulators</code> of <a href="https://gitlab.com/Kimmy.Cushman/laph_build_and_run">laph_build_and_run</a>
+
 
         <h4 style="padding-top: 10ex;"> Operators </h4>
         <ol>
@@ -99,6 +101,8 @@
         </ol>
         </p>
 
+        Code is at <a href="https://github.com/chrisculver/su4ops">su4ops</a> but needs organizing.
+
         <h4 style="padding-top: 10ex;"> Wick Contractions </h4>
         To evaluate the wick contractions we write all correlators as a product of commuting objects $C_a$, 
         quarks and anti-quarks.
@@ -125,6 +129,10 @@
 
         Where the first pair of numbers specifies the two baryon blocks being contracted.  The list of pairs gives the edge connections between the indices on the tensor. 
 
+        The wick contraction code by itself is at <a href="https://github.com/chrisculver/WickContractions/">WickContractions</a>. 
+
+        Use for su4 baryons with output in terms of graphs is at <a href="https://github.com/chrisculver/su4workflow">su4workflow</a>, specifically 
+        the jupyter notebooks <code>udud_baryon.ipynb</code> and <code>BB.ipynb</code>.
 
         <h4 style="padding-top: 10ex;"> Tensor Contractions </h4> 
             <ul>
@@ -132,6 +140,9 @@
               <li> Tensor contractions done on GPU </li>
               <li> TODO: Construct baryon blocks on GPU </li>
             </ul>
+
+          Code is in <code>meson</code> and <code>baryon</code> branches of <a href="https://gitlab.com/Kimmy.Cushman/laph_build_and_run">laph_build_and_run</a>
+          in the <code>Step4_Observables</code> folder.  This also needs some cleaning up.
 
         <h4 style="padding-top: 10ex;"> Analysis </h4>
         <p>
