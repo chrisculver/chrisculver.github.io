@@ -3,7 +3,7 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <meta name="description" content="SU(4) Contractions>
+      <meta name="description" content="SU(4) Contractions">
       <meta name="author" content="Kimmy Cushman">
       <meta name="generator" content="Hugo 0.88.1">
       <title>SU(4) (s)LapH vector and perambulator production</title>
@@ -24,6 +24,12 @@
         $("#perambulatorTable").load("/su4/perambulator_table.html");
       });
       </script>
+      
+      <script>
+      $(function(){
+        $("#observablesTable").load("/su4/observables_table.html");
+      });
+      </script>
 
       <script>
         $(function(){
@@ -42,8 +48,8 @@
     <div class="container" style="margin-top: 5ex;">
       <h3> Ensemble generation status </h3>
       <p>
-        LapH and sLapH vectors and perambulators that are available on lustre1. 
-        Timing information shows the amount of time (mins) required to run jobs. 
+        (s)LapH vectors and perambulators and correlation functions measured on these ensembles. All available on lustre1. 
+        Timing information shows the amount of time (mins) required for each configuration. 
         For vectors, this is the time required for each timeslice.
       </p>
       <p>
@@ -52,8 +58,12 @@
 
       <h4> (s)LapH vector production</h4>
       <div id="LapHTable"></div>
+      
       <h4> Perambulator production</h4>
       <div id="perambulatorTable"></div>
+      
+      <h4> Observables</h4>
+      <div id="observablesTable"></div>
 
       <br>
     </div>  
