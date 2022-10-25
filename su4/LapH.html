@@ -27,6 +27,12 @@
       
       <script>
       $(function(){
+        $("#spectrumTable").load("/su4/spectrum_table.html");
+      });
+      </script>
+      
+      <script>
+      $(function(){
         $("#comparesmearingTable").load("/su4/compare_smearing_table.html");
       });
       </script>
@@ -67,6 +73,9 @@
       
       <h4> Perambulator production</h4>
       <div id="perambulatorTable"></div>
+      
+      <h4> Spectrum</h4>
+      <div id="spectrumTable"></div>
       
       <h4> Compare Smearing</h4>
       <div id="comparesmearingTable"></div>
