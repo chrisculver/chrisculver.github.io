@@ -22,9 +22,10 @@
       <div class="col-md-2 sidebar nav">
           <ul class="nav nav-sidebar list-group" id="mysidebar">
             <li><a class="active list-group-item" href="#about">About</a></li>
-            <li><a class="list-group-item" href="#research">Physics Research</a></li>
-            <li><a class="list-group-item" href="#other-projects">Other Projects</a></li>
-            <li><a class="list-group-item" href="#interests">Interests</a></li>
+            <li><a class="list-group-item" href="#lqcd">Lattice QCD</a></li>
+            <li><a class="list-group-item" href="#qc">Quantum Computing</a></li>
+            <li><a class="list-group-item" href="#example-projects">Example Projects</a></li>
+            <li><a class="list-group-item" href="#other-interests">Other Interests</a></li>
         </div>
       </div>   
         
@@ -65,9 +66,9 @@
 
     <hr class="m-0"> 
 
-    <section class="main-page d-flex p-3 p-lg-5 align-items-center" id="research">
+    <section class="main-page d-flex p-3 p-lg-5 align-items-center" id="lqcd">
     <div class="w-100">
-      <h2 class="mb-0"> Physics Research </h2>
+      <h2 class="mb-0"> Lattice QCD </h2>
         <p> 
           My main research interest is to understand the interactions of the strong force,
           one of the <a href="https://en.wikipedia.org/wiki/Fundamental_interaction">
@@ -76,67 +77,86 @@
           protons and neutrons.  Studying these small particles requires the merging of quantum mechanics
           and relativity, which required the development of quantum field theory starting in the 1920's.  
           The quantum field theory that describes the strong interaction is called quantum chromodynamics (QCD),
-          but no analytic solution exists.
+          for which there is no analytic solution.
         </p>
-
-      <br>
-      <h3 class="mb-2"> Lattice QCD </h3>
       <p>
           Lattice QCD(LQCD) is the only first-principles approach to understanding the fundamentals of QCD and thus
-          the interactions of hadrons.  This approach approximates the real world, which is infinite in 
-          volume and continous in space and time, with a finite lattice.  The "matter" particles are placed on the sites
+          to the structure and interactions of hadrons.  This approach approximates the real world, which is infinite in 
+          volume and continous in space and time, replacing it with a discrete lattice containing a finite number of points.  
+          The "matter" particles are placed on the sites
           of this lattice and the "force carrying" particles live in-between the sites.  Calculations are performed on
-          supercomputers via importance sampling, or Monte Carlo simulations.  The central idea is that to calculate a 
-          certain quantity you need only a (relatively) small percentage of all the possible contributions from 
-          configurations of the quarks and gluons.
+          supercomputers via Monte Carlo importance sampling.  Within LQCD I specifically work on multiparticle scattering 
+          projects.  These are important because when two subatomic particles scatter with each other, they can resonate into 
+          a single particle (depending on the physical setup).  This happens not only in LQCD but also in experiment, giving 
+          us the chance to really test our understanding of the standard model and learn more about it. 
       </p>
-      <h4 class="mb-4"> SU(3) </h4>
-      <p> then three pictures with links to projects on 
-        a1(1260), three pi+, and pi-pi scattering.
+      <h4 class="mb-4"> Three-particle scattering </h4>
+      <p> There are two forefronts in LQCD scattering research, one is the study of baryon-baryon scattering, the other 
+        is to push to understand three or more particle scattering.  
+        My research group was the first to publish results for a three-particle resonance, 
+        the a<sub>1</sub>(1260), in which we used LQCD data to estimate the physical resonance parameters 
+        using the correct description of three-particle interactions.  
       </p>
-      <h4 class="mb-4">SU(4)</h4>
+    </div>
+  </section>
+      <!-- <h4 class="mb-4">BSM</h4>
       <p> Dark matter scattering.  <a href="su4/index.html">Project home page</a></p>
+      -->
       <br>
-      <h3> Quantum Computing </h3>
+      <section class="main-page d-flex p-3 p-lg-5 align-items-center" id="lqcd">
+      <div class="w-100">
+        <h2 class="mb-0"> Quantum Computing for Supersymmetry </h2>
       <p> 
         Quantum computing is an approach to computing by performing computations on quantum states instead of classical
         ones.  One of the key things to understand is the classical bits can only be in the state 0 or 1, while quantum
         bits, <b>qubits</b> can be in both states, which is known as superposition.  In some classes of numerical application
         quantum algorithms provide an exponential speedup over their classical counterparts.  
-
-        For LQCD research the appeal of quantum computing is to potentially ditch importance sampling methods altogether.  Instead
-        it is expected that the degrees of freedom of QCD can be mapped onto the degrees of freedom of the quantum computer.  Once
-        this is achieved the system can be set to a state of interest, and one could immediately measure certain properties or 
-        observe the state as it evolves in time.  
+      </p>
+      <p>
+        Supersymmetric theories are a proposed extension to the standard set of symmetries used in quantum field theories (rotations and boosts).
+        The additional symmetry is a symmetry transformation that replaces bosons (integer spin particles) with fermions (half integer spin).
+        While we do not have any experimental evidence to suggest supersymmetry is a correct description of the universe, it has 
+        nice features important for us to understand.  These two features are symmetry breaking (since supersymmetry <i>must</i> be broken).
+        Another feature is that it is known that supersymmetric theories are <a href="https://en.wikipedia.org/wiki/Holographic_principle">
+          holographically dual</a> to quantum gravitational theories.  Holographic duality allows us to learn about quantum gravitational 
+          systems be instead studying the <i>dual</i> quantum field theory.  
+      </p>
+      <p>
+        For any quantum field theory, quantum computing is an approach that lets us completely avoid the Monte-Carlo approach of LQCD.
+        Within a quantum computing formalism we can directly work with states of the quantum field theory.  We can directly perform 
+        operations of states of interest, and measure properties of the state, like its energy.  For a supersymmetric field theory it
+        is straightforward to tell if the supersymmetry is broken or preserved by measuring the ground state energy.  The supersymmetry 
+        is preserved if and only if the ground state energy of the system is zero.  For this we are using the <a href="https://en.wikipedia.org/wiki/Variational_quantum_eigensolver">
+        variational quantum eigensolver (VQE)</a>.  
       </p>
       <br>
-      <h3> Machine Learning </h3>
+      <h4> Machine Learning </h4>
       <p>
-        
+        Apart from using the VQE to compute the ground state energy, I am also interested in a machine learning approach based on 
+        the variational method.  Instead of using qubit states to compute the ground state energy we use a neural network as 
+        our quantum wavefunction.  By telling a learning algorithm to minimize the energy as a loss function, the neural network 
+        will learn the ground state wavefunction.  Once the ground state is learned it is straightforward task to compute the energy. 
       </p>
     </div>
     </section>
 
     <hr class="m-0"> 
 
-    <section class="main-page d-flex p-3 p-lg-5 align-items-center" id="other-projects">
+    <section class="main-page d-flex p-3 p-lg-5 align-items-center" id="example-projects">
     <div class="w-100">
-      <h2 class="mb-0"> Other Projects </h2>
+      <h2 class="mb-0"> Example Projects </h2>
     </div>
     </section>
 
     <hr class="m-0">
 
-
-    <section class="main-page d-flex p-3 p-lg-5 align-items-center" id="interests">
-    <div class="w-100">
-      <h2 class="mb-0"> Interests </h2>
-    </div>
-    </section>
-    </div>
-
-
-
+    <section class="main-page d-flex p-3 p-lg-5 align-items-center" id="other-interests">
+      <div class="w-100">
+        <h2 class="mb-0"> Other Interests </h2>
+      </div>
+      </section>
+  
+      <hr class="m-0">
 
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>      
   
