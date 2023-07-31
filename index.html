@@ -10,7 +10,27 @@
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="../assets/dist/css/bootstrap.min.css">
+
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$']]
+        }
+      };
+    </script>
     
+    <script>
+      $(function(){
+        $("#kimmysTable").load("/su4/kimmysTable.html");
+      });
+    </script>
+  
+  
+    <script type="text/javascript" id="MathJax-script" async
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    </script>
+
+
     <script src="https://kit.fontawesome.com/42743f0744.js" crossorigin="anonymous"></script>
 
     <!-- Custom styles for this template -->
@@ -138,6 +158,13 @@
         bits, <b>qubits</b> can be in both states, which is known as superposition.  In some classes of numerical application
         quantum algorithms provide an exponential speedup over their classical counterparts.  
       </p>
+        <figure class="text-center">
+          <img src="assets/img/qubit.svg" class="figure-img img-fluid rounded">
+          <figcaption class="figure-caption">
+            Bloch sphere representation of a qubit, a classical bit could only have the values $|0 \rangle$ or $|1 \rangle$.
+            Image credit: <a href="https://arxiv.org/pdf/1908.01847.pdf">Wikipedia</a>.
+          </figcaption>
+        </figure>
       <p>
         Supersymmetric theories are a proposed extension to the standard set of symmetries used in quantum field theories (rotations and boosts).
         The additional symmetry is a symmetry transformation that replaces bosons (integer spin particles) with fermions (half integer spin).
