@@ -142,12 +142,24 @@
         My research group was the first to publish results for a three-particle resonance, 
         the a<sub>1</sub>(1260), in which we used LQCD data to estimate the physical resonance parameters 
         using the correct description of three-particle interactions.  
+        The below plot shows the central result which is a direct comparison between lattice and experimental results, 
+        the x-axis of the plot is the mass of the particle and the y-axis is its (decay) width.  The blue points show 
+        the lattice samples of the resonance position at a heavier than physical pion mass.  These should be compared with 
+        the orange square which shows the PDG value extracted from experiments.  We do not apriori expect overlap, since the 
+        lattice simulation is done with unphysical parameters, nevertheless we find roughly good agreement between the 
+        mass of the a<sub>1</sub>(1260).
+        <figure class="text-center">
+          <img src="assets/img/a1.png" class="figure-img img-fluid rounded">
+          <figcaption class="figure-caption">
+            The a<sub>1</sub>(1260) resonance extracted from LQCD (blue points) at unphysical pion mass compared to the PDG value (orange box).
+            Image credit: <a href="https://arxiv.org/abs/2107.03973.pdf"> GWUQCD</a>.
+          </figcaption>
+        </figure>
+
       </p>
     </div>
   </section>
-      <!-- <h4 class="mb-4">BSM</h4>
-      <p> Dark matter scattering.  <a href="su4/index.html">Project home page</a></p>
-      -->
+
       <br>
       <section class="main-page d-flex p-3 p-lg-5 align-items-center" id="qc">
       <div class="w-100">
@@ -156,7 +168,10 @@
         Quantum computing is an approach to computing by performing computations on quantum states instead of classical
         ones.  One of the key things to understand is the classical bits can only be in the state 0 or 1, while quantum
         bits, <b>qubits</b> can be in both states, which is known as superposition.  In some classes of numerical application
-        quantum algorithms provide an exponential speedup over their classical counterparts.  
+        quantum algorithms provide an exponential speedup over their classical counterparts.  Similarly to classical computing we 
+        can perform operations, called gates, on qubits to change their state.  The speedup comes from the fact that since the 
+        state can be a linear combination of 0 and 1, the operation will effect both states simultaneously.  These operations are 
+        usually visualized on the Bloch sphere, where the south pole is 1 and the north pole is 0.    
       </p>
         <figure class="text-center">
           <img src="assets/img/qubit.svg" class="figure-img img-fluid rounded">
@@ -183,6 +198,7 @@
         variational quantum eigensolver (VQE)</a>.  
       </p>
       <br>
+    <!--
       <h4> Machine Learning </h4>
       <p>
         Apart from using the VQE to compute the ground state energy, I am also interested in a machine learning approach based on 
@@ -190,6 +206,7 @@
         our quantum wavefunction.  By telling a learning algorithm to minimize the energy as a loss function, the neural network 
         will learn the ground state wavefunction.  Once the ground state is learned it is straightforward task to compute the energy. 
       </p>
+    -->
     </div>
     </section>
 
