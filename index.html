@@ -44,7 +44,7 @@
             <li><a class="active list-group-item" href="#about">About</a></li>
             <li><a class="list-group-item" href="#lqcd">Lattice QCD</a></li>
             <li><a class="list-group-item" href="#qc">Quantum Computing</a></li>
-            <li><a class="list-group-item" href="#example-projects">Example Projects</a></li>
+            <!--<li><a class="list-group-item" href="#example-projects">Example Projects</a></li>-->
             <li><a class="list-group-item" href="#other-interests">Other Interests</a></li>
         </div>
       </div>   
@@ -54,12 +54,15 @@
     <div class="w-100">
       <h1 class="mb-0"> Christopher Culver </h1>
         
-      <div class="subheading mb-5">Liverpool, UK
+      <div class="subheading mb-5">
         <a href="mailto:name@email.com">chris.a.culver@gmail.com</a>
+        Liverpool, UK
       </div>
 
       <p class="lead mb-5">
-        Research Assistant at the University of Liverpool with a Ph.D. studying particle physics using quantum computing and machine learning methods.  Experience programming CPU and GPU  simulations for supercomputers and performing statistical data analysis.  Regularly invited to present research at international conferences and published in academic journals, including PRL which targets a broad physics audience.
+        Research Assistant at the University of Liverpool with a Ph.D. studying particle physics using quantum computing and machine learning methods.  
+        Experience programming and optimizing CPU and GPU simulations for supercomputers and performing statistical data analysis.  
+        Regularly invited to present research at international conferences and published in academic journals, including PRL which targets a broad physics audience.
       </p>
 
       <div class="social-icons">
@@ -71,13 +74,16 @@
         </a>
       </div>
       <br>
-      <p>Click Below to Download a Copy of My Resume</p>
+      <p>Click the PDF icon to download my CV.</p>
       <a href="/assets/files/ChrisCulverResume.pdf" download>
         <img src="/assets/img/pdf.png" width="100px" height="100px">
       </a>
-      <br>
-      <br>
-      <br>
+      <br><br>
+      <p> 
+        The remainder of this webpage is devoted to an introduction of the physics research I have worked on.  
+        If you are more interested in coding work I have done, head directly to <a href="https://github.com/chrisculver">my github</a>.
+      </p>
+      <br><br>
       <div class="warning-icon">
         <p> <i class="fa-solid fa-person-digging"></i> Warning this website is under construction!  Apologies for any mess or missing content. <i class="fa-solid fa-person-digging"></i></p>
       </div>
@@ -108,9 +114,9 @@
           Lattice QCD(LQCD) is the only first-principles approach to understanding the fundamentals of QCD and thus
           to the structure and interactions of hadrons.  This approach approximates the real world, which is infinite in 
           volume and continous in space and time, replacing it with a discrete lattice containing a finite number of points.  
-          The "matter" particles are placed on the sites
-          of this lattice and the "force carrying" particles live in-between the sites.  Calculations are performed on
-          supercomputers via Monte Carlo importance sampling.
+          The "matter" particles, quarks, are placed on the sites of this lattice and the "force carrying" particles, gluons, live in-between the sites.  
+          Calculations are performed on supercomputers via Monte Carlo importance sampling.  
+          The below gif is a visualization of this Monte Carlo process, where each frame corresponds to one statistical sample. 
       </p>
         <figure class="text-center">
           <img src="assets/img/lattice_sim.gif" class="figure-img img-fluid rounded">
@@ -119,16 +125,16 @@
           </figcaption>
         </figure>
       <h4 class="mb-4"> Scattering </h4>
-      <p> Within LQCD I specifically work on multiparticle scattering 
-        projects.  These are important because when two subatomic particles scatter with each other, they can resonate into 
-        a single particle (depending on the physical setup).  This happens not only in LQCD but also in experiment, giving 
-        us the chance to really test our understanding of the standard model.  Two particle scattering is completely specified
-        by a single parameter called the phase-shift.  This parameter can be determined experimentally and accessed from LQCD
-        simulations.  The below plot shows a comparison of these determinations for two <a href="https://en.wikipedia.org/wiki/Pion">pion</a> 
-        scattering for three different physical cases.  The data points with error bars come from experimental measurements of the phase shift,
-        while the lines come from a LQCD determination.  The only noticeable discrepancy comes from the middle figure, which we believe 
-        to be from the absence of some of the quarks in our simulation.
-        
+      <p> Within LQCD I specifically work on multiparticle scattering projects, think of billiards colliding on a billboard table.  
+        Billiards scatter clasically and only change their direction (state) when physically touching.  
+        Hadrons change their state throughout the scattering process via gluons carrying the strong force, even when the hadrons are physically separated. 
+        The nice thing about doing LQCD scattering calculations, is that we can compare directly with experimental measurements of hadron scattering properties.  
+        For two particle scattering we can completely specify the scattering process by a single parameter called the phase-shift.  
+        This parameter can be determined experimentally and accessed indirectly from LQCD simulations.  
+        The below plot shows a comparison of these determinations for two <a href="https://en.wikipedia.org/wiki/Pion">pion</a> scattering for three different physical cases.  
+        The data points with error bars come from experimental measurements of the phase shift, the lines come from my LQCD determination.  
+        The only noticeable discrepancy comes from the middle figure, which we believe to be from the absence of some of the quarks in our simulation.
+        Due to computational resource constraints we simply cannot simulate QCD with all six physics quarks, and our simulations only use two.      
         <figure class="text-center">
           <img src="assets/img/three-pi.png" class="figure-img img-fluid rounded">
           <figcaption class="figure-caption">
@@ -138,17 +144,11 @@
         </figure>
       </p>
       <p style="margin-bottom:1cm;">
-        There are two forefronts in LQCD scattering research, one is the study of baryon-baryon scattering, the other 
-        is to push to understand three or more particle scattering.  
-        My research group was the first to publish results for a three-particle resonance, 
-        the a<sub>1</sub>(1260), in which we used LQCD data to estimate the physical resonance parameters 
-        using the correct description of three-particle interactions.  
-        The below plot shows the central result which is a direct comparison between lattice and experimental results, 
-        the x-axis of the plot is the mass of the particle and the y-axis is its (decay) width.  The blue points show 
-        the lattice samples of the resonance position at a heavier than physical pion mass.  These should be compared with 
-        the orange square which shows the PDG value extracted from experiments.  We do not apriori expect overlap, since the 
-        lattice simulation is done with unphysical parameters, nevertheless we find roughly good agreement between the 
-        mass of the a<sub>1</sub>(1260).
+        There are two forefronts in LQCD scattering research, one is the study of baryon-baryon scattering, the other is to push to understand three or more particle scattering.  
+        My research group was the first to publish results for a three-particle resonance, the a<sub>1</sub>(1260), in which we used LQCD data to estimate the physical resonance parameters using the correct description of three-particle interactions.  
+        The below plot shows the central result which is a direct comparison between lattice and experimental results, the x-axis of the plot is the mass of the particle and the y-axis is its (decay) width.  
+        The blue points show the lattice samples of the resonance position at a heavier than physical pion mass.  These should be compared with the orange square which shows the PDG value extracted from experiments.  
+        We do not apriori expect overlap, since the lattice simulation is done with unphysical parameters, nevertheless we find roughly good agreement between the mass of the a<sub>1</sub>(1260).
         <figure class="text-center">
           <img src="assets/img/a1.png" class="figure-img img-fluid rounded">
           <figcaption class="figure-caption">
@@ -156,7 +156,6 @@
             Image credit: <a href="https://arxiv.org/abs/2107.03973.pdf"> GWUQCD</a>.
           </figcaption>
         </figure>
-
       </p>
     </div>
   </section>
@@ -166,13 +165,15 @@
       <div class="w-100">
         <h2 class="mb-0"> Quantum Computing for Supersymmetry </h2>
       <p> 
-        Quantum computing is an approach to computing by performing computations on quantum states instead of classical
-        ones.  One of the key things to understand is the classical bits can only be in the state 0 or 1, while quantum
-        bits, <b>qubits</b> can be in both states, which is known as superposition.  In some classes of numerical application
-        quantum algorithms provide an exponential speedup over their classical counterparts.  Similarly to classical computing we 
-        can perform operations, called gates, on qubits to change their state.  The speedup comes from the fact that since the 
-        state can be a linear combination of 0 and 1, the operation will effect both states simultaneously.  These operations are 
-        usually visualized on the Bloch sphere, where the south pole is 1 and the north pole is 0.    
+        Quantum computing is an approach to computing by performing operations on quantum states instead of classical ones.  
+        The central idea to understand is that quantum bits, qubits, can be in superpositions of states, a qubit can be in the state 0 <b>and</b> the state 1. 
+        A classical bit can only be in the state 0 <b>or</b> the state 1, thus an operation can only be applied to 0 <b>or</b> onto 1.  
+        If a qubit is placed into a superposition of states, a single operation can act on 0 <b>and</b> 1 simultaneously.  
+        This property can be leveraged algorithmically to gain an exponential speedup over classical computations.
+        Qubit states are nicely visualized on the Bloch sphere, below, where the south pole is 1 and the north pole is 0.  
+        States of qubits are represented as arrows pointing from the center to the edge of a unit sphere (radius 1).  
+        Classical bits are restricted to a vector pointing only to the north and south pole, while a qubit state can take be represented by a vector pointing anywhere on the sphere.
+        Operations on qubits transform the vector along the surface of the sphere.
       </p>
         <figure class="text-center">
           <img src="assets/img/qubit.svg" class="figure-img img-fluid rounded">
@@ -181,22 +182,28 @@
             Image credit: <a href="https://arxiv.org/pdf/1908.01847.pdf">Wikipedia</a>.
           </figcaption>
         </figure>
-      <p>
-        Supersymmetric theories are a proposed extension to the standard set of symmetries used in quantum field theories (rotations and boosts).
-        The additional symmetry is a symmetry transformation that replaces bosons (integer spin particles) with fermions (half integer spin).
-        While we do not have any experimental evidence to suggest supersymmetry is a correct description of the universe, it has 
-        nice features important for us to understand.  These two features are symmetry breaking (since supersymmetry <i>must</i> be broken).
-        Another feature is that it is known that supersymmetric theories are <a href="https://en.wikipedia.org/wiki/Holographic_principle">
-          holographically dual</a> to quantum gravitational theories.  Holographic duality allows us to learn about quantum gravitational 
-          systems be instead studying the <i>dual</i> quantum field theory.  
-      </p>
+
       <p>
         For any quantum field theory, quantum computing is an approach that lets us completely avoid the Monte-Carlo approach of LQCD.
-        Within a quantum computing formalism we can directly work with states of the quantum field theory.  We can directly perform 
-        operations of states of interest, and measure properties of the state, like its energy.  For a supersymmetric field theory it
-        is straightforward to tell if the supersymmetry is broken or preserved by measuring the ground state energy.  The supersymmetry 
-        is preserved if and only if the ground state energy of the system is zero.  For this we are using the <a href="https://en.wikipedia.org/wiki/Variational_quantum_eigensolver">
-        variational quantum eigensolver (VQE)</a>.  
+        This is advantageous because one major drawback of LQCD is having to work in an imaginary time formalism, for scattering this means we can only indirectly compare with experiments, which are of course in real time.  
+        Quantum simulations will always be performed in real time formalisms, as essentially the quantum computer is prepared into states that mimic states of the quantum field theory.
+        Apart from scattering we can also compute the energy levels of the theory using the <a href="https://en.wikipedia.org/wiki/Variational_quantum_eigensolver">variational quantum eigensolver(VQE)</a>.
+        The approach is essentially an application of the <a href="https://en.wikipedia.org/wiki/Variational_method_(quantum_mechanics)">variational method</a> using both classical and quantum devices.  
+        First a parameterized state is prepared on the quantum computer and the states energy is computed.  
+        Then classically these paramaters are tuned so that the energy of the state is minimized giving an upper bound on the true ground state energy.
+        The VQE is an excellent algorithm for the NISQ era because the quantum aspect of the calculation is extremely simple and does not require full fault tolerance, since we are not searching for a precise answer.  The VQE has also been extended to allow us to solve for multiple energy levels using the deflation method and valled varitional quantum deflation (VQD).
+      </p>
+
+      <p>
+        I have applied quantum computing methods to supersymmetric theories, which are a proposed extension to the standard set of symmetries used in quantum field theories called <a href="https://en.wikipedia.org/wiki/Poincar%C3%A9_group">Poincar&eacute</a>(translations, rotations and boosts).
+        The additional symmetry is a symmetry transformation that replaces bosons (integer spin particles) with fermions (half integer spin) invariantly, meaning the physical system is indifferent about which type of particle is there.
+        While we do not have any experimental evidence to suggest supersymmetry is a correct description of the universe, it is a useful theory to study symmetry breaking, especially since supersymmetry <i>must</i> be broken if it were the underlying theory of the universe.
+        In LQCD simulations, deciding whether supersymmetry is broken or preserved exponentially hard due to the <a href="https://en.wikipedia.org/wiki/Numerical_sign_problem">sign problem</a>. 
+        With quantum computing it is an extremely straightforward task due to the fact that supersymmetry is preserved if and only if the ground state energy is exactly zero.  
+        Furthermore any energy state that is non-zero has to be paired, there are always two states of positive energy, one bosonic and one fermionic.  
+        This lets us apply the VQE and VQD to supersymmetric systems to easily check whether or not we expect supersymmetry to be broken. 
+
+        NOW INCLUDE PLOTS
       </p>
       <br>
     <!--
@@ -210,7 +217,7 @@
     -->
     </div>
     </section>
-
+<!--
     <hr class="m-0"> 
 
     <section class="main-page d-flex p-3 p-lg-5 align-items-center" id="example-projects">
@@ -218,7 +225,7 @@
       <h2 class="mb-0"> Example Projects </h2>
     </div>
     </section>
-
+  -->
     <hr class="m-0">
 
     <section class="main-page d-flex p-3 p-lg-5 align-items-center" id="other-interests">
